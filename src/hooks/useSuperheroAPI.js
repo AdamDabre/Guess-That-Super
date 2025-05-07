@@ -1,6 +1,6 @@
 const VALID_PUBLISHERS = ["Marvel Comics", "DC Comics"];
 
-export async function fetchCharacterDetails(id) {
+export async function fetchCharacterDetailsByID(id) {
   try {
     const API_KEY = import.meta.env.VITE_SUPERHERO_API_KEY;
     if (!API_KEY) {
@@ -9,9 +9,7 @@ export async function fetchCharacterDetails(id) {
       );
     }
 
-    const response = await fetch(
-      `https://superheroapi.com/api/${API_KEY}/${id}`
-    );
+    const response = await fetch(`/api/api/${API_KEY}/${id}`);
     if (!response.ok) {
       throw new Error(
         `Failed to fetch character details for ID ${id}: ${response.statusText}`
@@ -26,7 +24,21 @@ export async function fetchCharacterDetails(id) {
   }
 }
 
-async function fetchCharacters() {
+export async function fetchCharacterDetailsByKey(key) {
+  const characterMap = await getCharacterMap();
+  const characterId = characterMap[key];
+  try {
+    if (!characterId) {
+      throw new Error(`Character not found for key: ${key}`);
+    }
+    return await fetchCharacterDetailsByID(characterId);
+  } catch (error) {
+    console.error("Error fetching character details by key:", error);
+    return null;
+  }
+}
+
+export async function fetchCharactersFromJSON() {
   try {
     const response = await fetch("/data/characters.json");
     if (!response.ok) {
@@ -40,9 +52,9 @@ async function fetchCharacters() {
   }
 }
 
-export async function getCharacters() {
+export async function getCharacterMap() {
   try {
-    const characters = await fetchCharacters();
+    const characters = await fetchCharactersFromJSON();
 
     if (!Array.isArray(characters)) {
       throw new Error("Invalid JSON format: Expected an array.");
@@ -67,8 +79,6 @@ export async function getCharacters() {
       return acc;
     }, {});
 
-    console.log("Character map created successfully:", characterMap);
-
     return characterMap;
   } catch (error) {
     console.error("Error processing characters.json:", error);
@@ -78,7 +88,7 @@ export async function getCharacters() {
 
 export async function getSearchRecommendations(query) {
   try {
-    const characterMap = await getCharacters();
+    const characterMap = await getCharacterMap();
     const recommendations = [];
 
     // Iterate through the character map to find matches

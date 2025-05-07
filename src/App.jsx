@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import { getSearchRecommendations } from "./hooks/useSuperheroAPI";
+import {
+  getSearchRecommendations,
+  fetchCharacterDetailsByKey,
+} from "./hooks/useSuperheroAPI";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -18,6 +21,15 @@ function App() {
     }
   };
 
+  const handleInputClick = async (e) => {
+    const selectedName = e.target.innerText;
+    setQuery(selectedName);
+    setRecommendations([]);
+
+    const characterDetails = await fetchCharacterDetailsByKey(selectedName);
+    console.log("Selected Character Details:", characterDetails);
+  };
+
   return (
     <div className="App">
       <h1>Superhero Search</h1>
@@ -29,7 +41,9 @@ function App() {
       />
       <ul>
         {recommendations.map((recommendation, index) => (
-          <li key={index}>{recommendation}</li>
+          <li onClick={handleInputClick} key={index}>
+            {recommendation}
+          </li>
         ))}
       </ul>
     </div>
