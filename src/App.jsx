@@ -1,20 +1,17 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import {
-  getSearchRecommendations,
-  fetchCharacterDetailsByKey,
-} from "./hooks/useSuperheroAPI";
-import SearchComponent from "./components/SearchComponent";
+import GuessPage from "./pages/GuessPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
-    <div className="App">
-      <SearchComponent
-        onResultSelect={fetchCharacterDetailsByKey}
-        title="Character Search"
-        placeholder="Search for a character..."
-      />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/guess" element={<GuessPage />} />
+      </Routes>
+    </Router>
   );
 }
 

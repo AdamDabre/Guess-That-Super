@@ -1,0 +1,86 @@
+.container {
+  background-image: url("/images/comic_wallpaper.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  font-family: var(--comic-font);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.textSection {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 3rem;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-primary);
+  transform: rotate(-1deg);
+  max-width: 80%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Space between text section and button */
+  width: 80%;
+  max-width: 800px;
+}
+
+.header {
+  color: var(--comic-primary);
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: var(--comic-text-shadow);
+  letter-spacing: 3px;
+  line-height: 1;
+  animation: var(--comic-animation-pulse);
+}
+
+.description {
+  color: var(--comic-black);
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.smallDescription {
+  color: var(--comic-primary);
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0;
+  border-top: var(--comic-border-dashed);
+  padding-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Add a comic-style button if you want to include navigation */
+.startButton {
+  background-color: var(--comic-primary);
+  color: white;
+  border: var(--comic-border-thick);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-family: var(--comic-font);
+  margin-top: 2rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 var(--comic-black);
+  transition: all 0.2s ease;
+}
+
+.startButton:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--comic-black);
+}
+
+.startButton:active {
+  background-color: var(--comic-accent);
+  color: var(--comic-black);
+}
