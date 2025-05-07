@@ -97,8 +97,8 @@ export async function getSearchRecommendations(query) {
         recommendations.push(key);
       }
 
-      // Limit recommendations to 20 for performance
-      if (recommendations.length >= 20) break;
+      // Limit recommendations to 10 for performance
+      if (recommendations.length >= 10) break;
     }
 
     return recommendations; // Return the list of matching character names
