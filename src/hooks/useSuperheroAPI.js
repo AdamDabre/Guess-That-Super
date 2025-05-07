@@ -1,6 +1,84 @@
-import fs from "fs";
-
 const VALID_PUBLISHERS = ["Marvel Comics", "DC Comics"];
+
+export async function fetchCharacterDetails(id) {
+  try {
+    const API_KEY = import.meta.env.VITE_SUPERHERO_API_KEY;
+    if (!API_KEY) {
+      throw new Error(
+        "API key is missing. Please set VITE_SUPERHERO_API_KEY in your environment."
+      );
+    }
+
+    const response = await fetch(
+      `https://superheroapi.com/api/${API_KEY}/${id}`
+    );
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch character details for ID ${id}: ${response.statusText}`
+      );
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching character details:", error);
+    return null;
+  }
+}
+
+async function fetchCharacters() {
+  try {
+    const response = await fetch("/data/characters.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch characters.json");
+    }
+    const characters = await response.json();
+    return characters;
+  } catch (error) {
+    console.error("Error fetching characters.json:", error);
+    return [];
+  }
+}
+
+export async function getCharacters() {
+  try {
+    const characters = await fetchCharacters();
+
+    if (!Array.isArray(characters)) {
+      throw new Error("Invalid JSON format: Expected an array.");
+    }
+
+    // Map characters to an object with name as key and id as value
+    const characterMap = characters.reduce((acc, character) => {
+      if (
+        character.id &&
+        character.name &&
+        VALID_PUBLISHERS.includes(character.publisher)
+      ) {
+        const key = `${character.name} (${
+          character["full-name"] || "Unknown"
+        })`;
+        acc[key] = character.id;
+      } else {
+        console.warn(
+          `Skipping invalid character entry: ${JSON.stringify(character)}`
+        );
+      }
+      return acc;
+    }, {});
+
+    console.log("Character map created successfully:", characterMap);
+
+    return characterMap;
+  } catch (error) {
+    console.error("Error processing characters.json:", error);
+    return {};
+  }
+}
+
+/* Below is the list of all heroes with their IDs and names. And a function to generate a JSON file from it.
+
+import fs from "fs";
 
 const allHeroes = [
   { id: 1, name: "A-Bomb" },
@@ -736,68 +814,7 @@ const allHeroes = [
   { id: 731, name: "Zoom" },
 ];
 
-export async function fetchCharacterDetails(id) {
-  try {
-    const API_KEY = import.meta.env.VITE_SUPERHERO_API_KEY;
-    if (!API_KEY) {
-      throw new Error(
-        "API key is missing. Please set VITE_SUPERHERO_API_KEY in your environment."
-      );
-    }
-
-    const response = await fetch(
-      `https://superheroapi.com/api/${API_KEY}/${id}`
-    );
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch character details for ID ${id}: ${response.statusText}`
-      );
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching character details:", error);
-    return null;
-  }
-}
-
-export async function characterMapFromJson() {
-  try {
-    const data = fs.readFileSync("characters.json", "utf-8");
-    const characters = JSON.parse(data);
-
-    if (!Array.isArray(characters)) {
-      throw new Error("Invalid JSON format: Expected an array.");
-    }
-
-    // Map characters to an object with name as key and id as value
-    const characterMap = characters.reduce((acc, character) => {
-      if (
-        character.id &&
-        character.name &&
-        VALID_PUBLISHERS.includes(character.publisher)
-      ) {
-        const key = `${character.name} (${
-          character["full-name"] || "Unknown"
-        })`;
-        acc[key] = character.id;
-      } else {
-        console.warn(
-          `Skipping invalid character entry: ${JSON.stringify(character)}`
-        );
-      }
-      return acc;
-    }, {});
-
-    return characterMap;
-  } catch (error) {
-    console.error("Error reading or processing characters.json:", error);
-    return {};
-  }
-}
-
-export async function fetchAndAddPublishersToHeroes() {
+async function fetchAndAddPublishersToHeroes() {
   try {
     const API_KEY = import.meta.env.VITE_SUPERHERO_API_KEY;
     if (!API_KEY) {
@@ -837,7 +854,7 @@ export async function fetchAndAddPublishersToHeroes() {
 
     // Save updated heroes to a file
     fs.writeFileSync(
-      "characters.json",
+      "src/data/characters.json",
       JSON.stringify(heroes, null, 2),
       "utf-8"
     );
@@ -848,3 +865,5 @@ export async function fetchAndAddPublishersToHeroes() {
     return [];
   }
 }
+
+*/
