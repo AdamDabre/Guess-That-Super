@@ -76,6 +76,28 @@ export async function getCharacters() {
   }
 }
 
+export async function getSearchRecommendations(query) {
+  try {
+    const characterMap = await getCharacters();
+    const recommendations = [];
+
+    // Iterate through the character map to find matches
+    for (const key of Object.keys(characterMap)) {
+      if (key.toLowerCase().includes(query.toLowerCase())) {
+        recommendations.push(key);
+      }
+
+      // Limit recommendations to 20 for performance
+      if (recommendations.length >= 20) break;
+    }
+
+    return recommendations; // Return the list of matching character names
+  } catch (error) {
+    console.error("Error fetching search recommendations:", error);
+    return [];
+  }
+}
+
 /* Below is the list of all heroes with their IDs and names. And a function to generate a JSON file from it.
 
 import fs from "fs";
