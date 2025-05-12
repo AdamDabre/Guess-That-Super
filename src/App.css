@@ -27,4 +27,9 @@
 
   /* Fonts */
   --comic-font: "Bangers", "Comic Sans MS", cursive, sans-serif;
+
+  --comic-hit-color: rgba(76, 175, 80, 0.7);
+  --comic-miss-color: rgba(244, 67, 54, 0.7);
+  --comic-higher-color: rgba(255, 193, 7, 0.7);
+  --comic-lower-color: rgba(33, 150, 243, 0.7);
 }

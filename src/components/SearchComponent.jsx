@@ -30,6 +30,8 @@ const SearchComponent = ({ onResultSelect, placeholder = "" }) => {
     if (onResultSelect) {
       onResultSelect(recommendation);
     }
+    // Clear the input field after selection
+    setQuery("");
   };
 
   return (

@@ -8,7 +8,7 @@ const LandingPage = () => {
     <section className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.textSection}>
-          <p className={styles.header}>Guess That Hero</p>
+          <p className={styles.header}>Guess That Super</p>
           <p className={styles.description}>
             The Marvel and DC Character Guessing Game
           </p>

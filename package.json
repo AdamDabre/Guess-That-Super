@@ -1,10 +1,13 @@
 {
+  "homepage": "https://adamdabre.github.io/Guess-That-Super/#",
   "name": "guess-that-super",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,6 +15,7 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.5.3",

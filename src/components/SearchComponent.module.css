@@ -29,7 +29,7 @@
   box-shadow: var(--comic-shadow-primary);
   transition: all 0.3s ease;
   font-family: inherit;
-  background-color: var(--comic-secondary);
+  background-color: var(--comic-white);
   color: var(--comic-black);
   letter-spacing: 1px;
 }

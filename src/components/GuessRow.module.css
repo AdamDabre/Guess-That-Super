@@ -1,0 +1,238 @@
+.row {
+  display: flex;
+  border: 4px solid #000;
+  margin-bottom: 1rem;
+  background-color: #f3b241;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.15);
+  animation: comicPop 0.4s ease;
+  position: relative;
+}
+
+/* Comic dot pattern overlay */
+.row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#ff3d00 15%, transparent 15%);
+  background-size: 8px 8px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  border-right: 2px dashed #000;
+  font-family: "Bangers", cursive;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.cellText {
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+/* Indicator styles */
+.hitIndicator,
+.missIndicator,
+.higherIndicator,
+.lowerIndicator {
+  font-size: 1.8rem;
+  font-weight: bold;
+  animation: bounceIn 0.4s ease;
+}
+
+.hitIndicator {
+  color: #c8e6c9;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+}
+
+.missIndicator {
+  color: #ffcdd2;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  animation: shake 0.5s ease;
+}
+
+.higherIndicator {
+  color: #000;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.lowerIndicator {
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Status background colors */
+.hit {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 3px #2e7d32;
+}
+
+.miss {
+  background-color: #ff5252;
+  color: white;
+  box-shadow: inset 0 0 0 3px #d32f2f;
+}
+
+.higher {
+  background-color: #ffd600;
+  color: #000;
+  box-shadow: inset 0 0 0 3px #ffab00;
+}
+
+.lower {
+  background-color: #448aff;
+  color: white;
+  box-shadow: inset 0 0 0 3px #1976d2;
+}
+
+/* Keep all your existing animations and empty row styles */
+@keyframes comicPop {
+  0% {
+    transform: scale(0.95) rotate(0.5deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes hitFlash {
+  0% {
+    background-color: #4caf50;
+  }
+  50% {
+    background-color: #8bc34a;
+  }
+  100% {
+    background-color: #4caf50;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hit {
+  animation: comicPop 0.3s ease, hitFlash 0.6s 2;
+}
+
+.emptyRow {
+  height: 3.5rem;
+  border: 3px dotted var(--comic-primary);
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--comic-font);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--comic-primary);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: rotate(0.5deg);
+}
+
+.emptyRow::before,
+.emptyRow::after {
+  content: "•";
+  position: absolute;
+  color: var(--comic-primary);
+  font-size: 1.5rem;
+}
+
+.emptyRow::before {
+  top: 5px;
+  left: 10px;
+}
+
+.emptyRow::after {
+  bottom: 5px;
+  right: 10px;
+}
+.cellText {
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.hitIndicator,
+.missIndicator,
+.higherIndicator,
+.lowerIndicator {
+  font-size: 1.8rem;
+  font-weight: bold;
+  animation: bounceIn 0.4s ease;
+}
+
+.hitIndicator {
+  color: #c8e6c9;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+}
+
+.missIndicator {
+  color: #ffcdd2;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  animation: shake 0.5s ease;
+}
+
+.higherIndicator {
+  color: #000;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.lowerIndicator {
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}

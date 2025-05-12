@@ -71,10 +71,6 @@ export async function getCharacterMap() {
           character["full-name"] || "Unknown"
         })`;
         acc[key] = character.id;
-      } else {
-        console.warn(
-          `Skipping invalid character entry: ${JSON.stringify(character)}`
-        );
       }
       return acc;
     }, {});
@@ -107,6 +103,19 @@ export async function getSearchRecommendations(query) {
     return [];
   }
 }
+
+export const getRandomCharacter = async () => {
+  try {
+    const characters = await getCharacterMap();
+    const characterKeys = Object.keys(characters);
+    const randomKey =
+      characterKeys[Math.floor(Math.random() * characterKeys.length)];
+    return await fetchCharacterDetailsByKey(randomKey);
+  } catch (error) {
+    console.error("Error fetching random character: ", error);
+    return null;
+  }
+};
 
 /* Below is the list of all heroes with their IDs and names. And a function to generate a JSON file from it.
 
