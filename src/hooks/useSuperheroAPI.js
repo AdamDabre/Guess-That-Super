@@ -1,3 +1,8 @@
+const BASE_URL =
+  import.meta.env.VITE_MODE === "development"
+    ? "/api"
+    : "https://cors-anywhere.herokuapp.com/https://superheroapi.com/api";
+
 const VALID_PUBLISHERS = ["Marvel Comics", "DC Comics"];
 
 export async function fetchCharacterDetailsByID(id) {
@@ -9,7 +14,7 @@ export async function fetchCharacterDetailsByID(id) {
       );
     }
 
-    const response = await fetch(`/api/api/${API_KEY}/${id}`);
+    const response = await fetch(`${BASE_URL}/${API_KEY}/${id}`);
     if (!response.ok) {
       throw new Error(
         `Failed to fetch character details for ID ${id}: ${response.statusText}`
@@ -40,7 +45,8 @@ export async function fetchCharacterDetailsByKey(key) {
 
 export async function fetchCharactersFromJSON() {
   try {
-    const response = await fetch("/data/characters.json");
+    const response = await fetch("./data/characters.json");
+
     if (!response.ok) {
       throw new Error("Failed to fetch characters.json");
     }
