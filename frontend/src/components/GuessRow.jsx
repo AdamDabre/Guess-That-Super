@@ -1,4 +1,6 @@
 import styles from "./GuessRow.module.css";
+import { fetchCharactersFromJSON } from "../hooks/useSuperheroAPI";
+import React from "react";
 
 const GuessType = Object.freeze({
   HIT: 0,
@@ -14,6 +16,17 @@ const GuessRow = ({
   difficulty = "Casual",
   placeholder,
 }) => {
+  const [characterData, setCharacterData] = React.useState([]);
+
+  React.useEffect(() => {
+    // Load characters.json data
+    const loadCharacterData = async () => {
+      const data = await fetchCharactersFromJSON();
+      setCharacterData(data);
+    };
+    loadCharacterData();
+  }, []);
+
   if (!revealed)
     return (
       <div className={styles.emptyRow}>
@@ -27,6 +40,14 @@ const GuessRow = ({
       </div>
     );
 
+  const getPublisherFromJSON = (characterName, characterFullName) => {
+    const character = characterData.find(
+      (char) =>
+        char.name === characterName && char["full-name"] === characterFullName
+    );
+    return character ? character.publisher : "Unknown";
+  };
+
   const compareAttribute = (attrPath, isMultiple = false) => {
     const getNestedValue = (obj, path) => {
       return path
@@ -34,18 +55,30 @@ const GuessRow = ({
         .reduce((acc, key) => (acc ? acc[key] : undefined), obj);
     };
 
-    const guessValue = getNestedValue(guess, attrPath) || "Unknown";
-    const targetValue = getNestedValue(target, attrPath) || "Unknown";
-    const seperators = /[,;]/;
+    let guessValue = getNestedValue(guess, attrPath) || "Unknown";
+    let targetValue = getNestedValue(target, attrPath) || "Unknown";
+
+    // Use characters.json for publisher comparison
+    if (attrPath === "biography.publisher") {
+      guessValue = getPublisherFromJSON(
+        guess.name,
+        guess.biography["full-name"]
+      );
+      targetValue = getPublisherFromJSON(
+        target.name,
+        target.biography["full-name"]
+      );
+    }
 
     if (isMultiple) {
+      const separators = /[,;]/;
       const guessValues =
         guessValue !== "Unknown"
-          ? guessValue.split(seperators).map((v) => v.trim())
+          ? guessValue.split(separators).map((v) => v.trim())
           : [];
       const targetValues =
         targetValue !== "Unknown"
-          ? targetValue.split(seperators).map((v) => v.trim())
+          ? targetValue.split(separators).map((v) => v.trim())
           : [];
 
       const match = guessValues.find((value) => targetValues.includes(value));
@@ -129,9 +162,7 @@ const GuessRow = ({
 
       {/* Publisher */}
       {renderCell(
-        guess.biography.publisher === "null" || !guess.biography.publisher
-          ? "Unknown"
-          : guess.biography.publisher,
+        getPublisherFromJSON(guess.name, guess.biography["full-name"]),
         compareAttribute("biography.publisher").result
       )}
 
