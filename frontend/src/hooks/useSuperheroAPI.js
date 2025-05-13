@@ -1,9 +1,8 @@
-const BASE_URL =
-  import.meta.env.VITE_MODE === "development"
-    ? "/api"
-    : "https://cors-anywhere.herokuapp.com/https://superheroapi.com/api";
-
 const VALID_PUBLISHERS = ["Marvel Comics", "DC Comics"];
+const BACKEND_URL =
+  process.env.NODE_ENV === "production"
+    ? import.meta.env.VITE_BACKEND_URL
+    : "http://localhost:3000";
 
 export async function fetchCharacterDetailsByID(id) {
   try {
@@ -14,7 +13,10 @@ export async function fetchCharacterDetailsByID(id) {
       );
     }
 
-    const response = await fetch(`${BASE_URL}/${API_KEY}/${id}`);
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/${API_KEY}/${id}`
+    );
+
     if (!response.ok) {
       throw new Error(
         `Failed to fetch character details for ID ${id}: ${response.statusText}`
