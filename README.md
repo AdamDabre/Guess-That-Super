@@ -47,7 +47,6 @@ This project uses the [Superhero API](https://superheroapi.com/) to fetch charac
 
 - Only DC and Marvel characters
 - Valid powerstats and biography data
-- Cached responses to minimize API calls
 
 [Live Demo](https://adamdabre.github.io/Guess-That-Super/) 
 
