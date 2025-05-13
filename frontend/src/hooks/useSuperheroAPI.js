@@ -13,9 +13,7 @@ export async function fetchCharacterDetailsByID(id) {
       );
     }
 
-    const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/${API_KEY}/${id}`
-    );
+    const response = await fetch(`${BACKEND_URL}/api/${API_KEY}/${id}`);
 
     if (!response.ok) {
       throw new Error(
