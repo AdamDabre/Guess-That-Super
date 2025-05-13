@@ -51,7 +51,7 @@
     "id": 9,
     "name": "Agent 13",
     "full-name": "Sharon Carter",
-    "publisher": "Sharon Carter"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 10,
@@ -141,7 +141,7 @@
     "id": 24,
     "name": "Angel",
     "full-name": "Warren Kenneth Worthington III",
-    "publisher": "Archangel"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 25,
@@ -159,7 +159,7 @@
     "id": 27,
     "name": "Angela",
     "full-name": "",
-    "publisher": "Image Comics"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 28,
@@ -177,7 +177,7 @@
     "id": 30,
     "name": "Ant-Man",
     "full-name": "Hank Pym",
-    "publisher": "Giant-Man"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 31,
@@ -201,7 +201,7 @@
     "id": 34,
     "name": "Anti-Venom",
     "full-name": "Eddie Brock",
-    "publisher": "Toxin"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 35,
@@ -237,7 +237,7 @@
     "id": 40,
     "name": "Archangel",
     "full-name": "Warren Kenneth Worthington III",
-    "publisher": "Angel"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 41,
@@ -273,7 +273,7 @@
     "id": 46,
     "name": "Arsenal",
     "full-name": "Roy William Harper, Jr.",
-    "publisher": "Speedy"
+    "publisher": "DC Comics"
   },
   {
     "id": 47,
@@ -285,7 +285,7 @@
     "id": 48,
     "name": "Atlas",
     "full-name": "Erik Josten",
-    "publisher": "Goliath"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 49,
@@ -375,19 +375,19 @@
     "id": 63,
     "name": "Batgirl",
     "full-name": "Barbara Gordon",
-    "publisher": "Oracle"
+    "publisher": "DC Comics"
   },
   {
     "id": 64,
     "name": "Batgirl",
     "full-name": "Mary Elizabeth Kane",
-    "publisher": "Hawkfire"
+    "publisher": "DC Comics"
   },
   {
     "id": 65,
     "name": "Batgirl III",
     "full-name": "Helena Rosa Bertinelli",
-    "publisher": "Huntress"
+    "publisher": "DC Comics"
   },
   {
     "id": 66,
@@ -399,13 +399,13 @@
     "id": 67,
     "name": "Batgirl V",
     "full-name": "Charlotte Gage-Radcliffe",
-    "publisher": "Misfit"
+    "publisher": "DC Comics"
   },
   {
     "id": 68,
     "name": "Batgirl VI",
     "full-name": "Stephanie Brown",
-    "publisher": "Spoiler"
+    "publisher": "DC Comics"
   },
   {
     "id": 69,
@@ -423,7 +423,7 @@
     "id": 71,
     "name": "Batman II",
     "full-name": "Dick Grayson",
-    "publisher": "Nightwing"
+    "publisher": "DC Comics"
   },
   {
     "id": 72,
@@ -513,7 +513,7 @@
     "id": 86,
     "name": "Binary",
     "full-name": "Carol Danvers",
-    "publisher": "Captain Marvel"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 87,
@@ -777,7 +777,7 @@
     "id": 130,
     "name": "Boom-Boom",
     "full-name": "Tabitha Smith",
-    "publisher": "Meltdown"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 131,
@@ -939,7 +939,7 @@
     "id": 157,
     "name": "Captain Marvel",
     "full-name": "Carol Danvers",
-    "publisher": "Binary"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 158,
@@ -1275,7 +1275,7 @@
     "id": 213,
     "name": "Deadpool",
     "full-name": "Wade Wilson",
-    "publisher": "Evil Deadpool"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 214,
@@ -1479,7 +1479,7 @@
     "id": 247,
     "name": "Evil Deadpool",
     "full-name": "Wade Wilson",
-    "publisher": "Deadpool"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 248,
@@ -1587,19 +1587,19 @@
     "id": 265,
     "name": "Flash II",
     "full-name": "Barry Allen",
-    "publisher": "Black Racer"
+    "publisher": "DC Comics"
   },
   {
     "id": 266,
     "name": "Flash III",
     "full-name": "Wally West",
-    "publisher": "Speed Demon"
+    "publisher": "DC Comics"
   },
   {
     "id": 267,
     "name": "Flash IV",
     "full-name": "Bartholomew Allen II",
-    "publisher": "Impulse"
+    "publisher": "DC Comics"
   },
   {
     "id": 268,
@@ -1689,7 +1689,7 @@
     "id": 282,
     "name": "Giant-Man",
     "full-name": "Hank Pym",
-    "publisher": "Ant-Man"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 283,
@@ -1737,19 +1737,19 @@
     "id": 290,
     "name": "Goliath",
     "full-name": "Erik Josten",
-    "publisher": "Atlas"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 291,
     "name": "Goliath",
     "full-name": "Clint Barton",
-    "publisher": "Hawkeye"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 292,
     "name": "Goliath",
     "full-name": "Hank Pym",
-    "publisher": "Ant-Man"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 293,
@@ -1875,7 +1875,7 @@
     "id": 313,
     "name": "Hawkeye",
     "full-name": "Clint Barton",
-    "publisher": "Goliath"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 314,
@@ -2001,7 +2001,7 @@
     "id": 334,
     "name": "Huntress",
     "full-name": "Helena Rosa Bertinelli",
-    "publisher": "Batgirl III"
+    "publisher": "DC Comics"
   },
   {
     "id": 335,
@@ -2037,7 +2037,7 @@
     "id": 340,
     "name": "Impulse",
     "full-name": "Bartholomew Allen II",
-    "publisher": "Flash IV"
+    "publisher": "DC Comics"
   },
   {
     "id": 341,
@@ -2133,7 +2133,7 @@
     "id": 356,
     "name": "Jean Grey",
     "full-name": "Jean Grey",
-    "publisher": "Phoenix"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 357,
@@ -2163,7 +2163,7 @@
     "id": 361,
     "name": "Jessica Jones",
     "full-name": "Jessica Campbell Jones Cage",
-    "publisher": "Power Woman"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 362,
@@ -2271,7 +2271,7 @@
     "id": 379,
     "name": "Kang",
     "full-name": "Nathaniel Richards",
-    "publisher": "Iron Lad"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 380,
@@ -2307,7 +2307,7 @@
     "id": 385,
     "name": "Kid Flash II",
     "full-name": "Bartholomew Allen II",
-    "publisher": "Flash IV"
+    "publisher": "DC Comics"
   },
   {
     "id": 386,
@@ -2493,7 +2493,7 @@
     "id": 416,
     "name": "Luke Cage",
     "full-name": "Luke Cage",
-    "publisher": "Power Man"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 417,
@@ -2721,7 +2721,7 @@
     "id": 454,
     "name": "Misfit",
     "full-name": "Charlotte Gage-Radcliffe",
-    "publisher": "Batgirl V"
+    "publisher": "DC Comics"
   },
   {
     "id": 455,
@@ -2943,7 +2943,7 @@
     "id": 491,
     "name": "Nightwing",
     "full-name": "Dick Grayson",
-    "publisher": "Batman II"
+    "publisher": "DC Comics"
   },
   {
     "id": 492,
@@ -3027,7 +3027,7 @@
     "id": 505,
     "name": "Oracle",
     "full-name": "Barbara Gordon",
-    "publisher": "Batgirl"
+    "publisher": "DC Comics"
   },
   {
     "id": 506,
@@ -3099,7 +3099,7 @@
     "id": 517,
     "name": "Phoenix",
     "full-name": "Jean Grey",
-    "publisher": "Jean Grey"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 518,
@@ -3273,7 +3273,7 @@
     "id": 546,
     "name": "Red Hood",
     "full-name": "Jason Todd",
-    "publisher": "Robin II"
+    "publisher": "DC Comics"
   },
   {
     "id": 547,
@@ -3291,7 +3291,7 @@
     "id": 549,
     "name": "Red Robin",
     "full-name": "Tim Drake",
-    "publisher": "Robin III"
+    "publisher": "DC Comics"
   },
   {
     "id": 550,
@@ -3363,19 +3363,19 @@
     "id": 561,
     "name": "Robin",
     "full-name": "Dick Grayson",
-    "publisher": "Batman II"
+    "publisher": "DC Comics"
   },
   {
     "id": 562,
     "name": "Robin II",
     "full-name": "Jason Todd",
-    "publisher": "Red Hood"
+    "publisher": "DC Comics"
   },
   {
     "id": 563,
     "name": "Robin III",
     "full-name": "Tim Drake",
-    "publisher": "Red Robin"
+    "publisher": "DC Comics"
   },
   {
     "id": 564,
@@ -3405,7 +3405,7 @@
     "id": 568,
     "name": "Ronin",
     "full-name": "Clint Barton",
-    "publisher": "Goliath"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 569,
@@ -3459,7 +3459,7 @@
     "id": 577,
     "name": "Scarlet Spider",
     "full-name": "Benjamin Reilly",
-    "publisher": "Spider-Carnage"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 578,
@@ -3483,7 +3483,7 @@
     "id": 581,
     "name": "Scorpion",
     "full-name": "MacDonald Gargan",
-    "publisher": "Venom III"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 582,
@@ -3537,7 +3537,7 @@
     "id": 590,
     "name": "She-Thing",
     "full-name": "Sharon Ventura",
-    "publisher": "Ms Marvel II"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 591,
@@ -3699,7 +3699,7 @@
     "id": 617,
     "name": "Spider-Carnage",
     "full-name": "Benjamin Reilly",
-    "publisher": "Scarlet Spider"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 618,
@@ -3861,7 +3861,7 @@
     "id": 644,
     "name": "Superman",
     "full-name": "Clark Kent",
-    "publisher": "Superman Prime One-Million"
+    "publisher": "DC Comics"
   },
   {
     "id": 645,
@@ -3951,7 +3951,7 @@
     "id": 659,
     "name": "Thor",
     "full-name": "Thor Odinson",
-    "publisher": "Rune King Thor"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 660,
@@ -4029,7 +4029,7 @@
     "id": 672,
     "name": "Toxin",
     "full-name": "Eddie Brock",
-    "publisher": "Anti-Venom"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 673,
@@ -4119,7 +4119,7 @@
     "id": 687,
     "name": "Venom",
     "full-name": "Eddie Brock",
-    "publisher": "Anti-Venom"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 688,
@@ -4137,7 +4137,7 @@
     "id": 690,
     "name": "Venompool",
     "full-name": "Wade Wilson",
-    "publisher": "Deadpool"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 691,
@@ -4179,7 +4179,7 @@
     "id": 697,
     "name": "Vision",
     "full-name": "Vision",
-    "publisher": "Anti-Vision"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 698,
@@ -4239,7 +4239,7 @@
     "id": 707,
     "name": "Warpath",
     "full-name": "James Proudstar",
-    "publisher": "Thunderbird II"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 708,
@@ -4353,7 +4353,7 @@
     "id": 726,
     "name": "Yellowjacket",
     "full-name": "Hank Pym",
-    "publisher": "Ant-Man"
+    "publisher": "Marvel Comics"
   },
   {
     "id": 727,
